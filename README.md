@@ -22,8 +22,9 @@ Le projet est organisé comme suit :
 ---
 ## 🛠️ Prérequis
 
-- **Java 11 ou supérieur** recommandé (Testé avec OpenJDK 23)
-- Un IDE Java (IntelliJ, Eclipse, NetBeans) ou un terminal avec le JDK installé.
+- **Java 17 ou supérieur** recommandé (Testé avec 23)
+- Un IDE comme **IntelliJ**, **Eclipse** ou **NetBeans**.
+- **Maven** (facultatif si tu utilises un IDE).
 
 ---
 
@@ -46,8 +47,26 @@ Le projet est organisé comme suit :
     ```
 
 ---
+## 🚀 Fonctionnalités
 
-## 🖼️ Aperçu après exécution
+### 1️⃣ Choix de la source du labyrinthe
+- **Génération aléatoire** : taille configurable (5x5 à 50x50)
+- **Chargement depuis un fichier** (labyrinthe.txt)
+
+### 2️⃣ Choix de la méthode de résolution
+- Résolution avec **DFS uniquement**
+- Résolution avec **BFS uniquement**
+- **Comparaison complète** entre DFS et BFS
+
+### 3️⃣ Comparaison détaillée
+Après résolution, le programme affiche :
+- ✅ Le chemin trouvé (en console)
+- ✅ Le **nombre de cases visitées**
+- ✅ Le **temps d'exécution**
+- ✅ Le chemin en **interface graphique** avec Swing
+
+---
+## 📊 Exemple de sortie
 
 1. Exemple en utilisant le fichier labyrinthe.txt :
    
