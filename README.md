@@ -15,26 +15,7 @@ L'application offre une interface console interactive permettant de :
 ## 📂 Structure du projet
 
 Le projet est organisé comme suit :
-
-src/
-├── main/
-│   ├── java/
-│   │   ├── mazeresolver/                 # Package principal
-│   │   │   ├── gui/                       # Interface graphique
-│   │   │   │   ├── LabyrinthePanel.java
-│   │   │   ├── utils/                     # Classes utilitaires
-│   │   │   │   ├── Chrono.java            # Chrono pour mesurer le temps d'exécution de chaque algorithme
-│   │   │   │   ├── LabyrintheGenerator.java #Générateur aléatoire de labyrinthe
-│   │   │   │   ├── LabyrintheLoader.java  # Un loader (charger le labyrinthe)
-│   │   │   ├── Labyrinthe.java            # Logique du labyrinthe
-│   │   │   ├── Main.java                   # Point d’entrée
-│   │   │   ├── Solveur.java                # Algorithmes de résolution
-│   ├── resources/
-│   │   ├── labyrinthe.txt                  # Exemple de labyrinthe stocké
-├── test/
-│   ├── java/                               # Dossier pour tests unitaires (peut être vide)
-├── target/                                # Dossier de compilation (généré)
-├── pom.xml                                # Fichier Maven
+<img width="639" alt="ooo" src="https://github.com/user-attachments/assets/0ecf2b37-e768-494b-93d4-5e7a018a458a" />
 
 
 ---
@@ -68,6 +49,7 @@ src/
 ## 🖼️ Aperçu après exécution
 
 1. Exemple en utilisant le fichier labyrinthe.txt :
+   
 <img width="597" alt="1" src="https://github.com/user-attachments/assets/8ebd110a-b0ab-4af9-8961-391dead8a03b" />
 
 <img width="709" alt="2" src="https://github.com/user-attachments/assets/bc323342-7a63-49ab-a3f2-40c3d701453b" />
@@ -75,7 +57,9 @@ src/
 <img width="629" alt="3" src="https://github.com/user-attachments/assets/03e36c63-afda-40a0-ac78-653a23b9744d" />
 
 
+
 2. Exemple en générant d'un fichier aléatoire :
+   
 <img width="640" alt="5" src="https://github.com/user-attachments/assets/3cb111d7-10ef-460d-b2c7-c0819a0a88e2" />
 
 <img width="395" alt="6" src="https://github.com/user-attachments/assets/b78dfe27-f619-43eb-bfd7-9fd826afb123" />
