@@ -8,7 +8,8 @@ public class Solveur {
     private char[][] labyrinthe;
     private boolean[][] visite;
     private List<Point> chemin;
-    private int casesVisitees;  // Nouveau compteur
+    private int casesVisitees;
+    private long tempsExecution;  // On ajoute la variable pour le temps
 
     public Solveur(char[][] labyrinthe) {
         this.labyrinthe = labyrinthe;
@@ -22,6 +23,11 @@ public class Solveur {
 
     public int getCasesVisitees() {
         return casesVisitees;
+    }
+
+    // Ajout de cette méthode pour que Main puisse récupérer le temps
+    public long getTempsExecution() {
+        return tempsExecution;
     }
 
     private Point trouverPoint(char cible) {
@@ -55,9 +61,11 @@ public class Solveur {
     }
 
     // ============================
-    // DFS avec compteur
+    // DFS avec compteur + temps
     // ============================
     public boolean resoudreDFS() {
+        long debut = System.currentTimeMillis();  // On démarre le chrono
+
         Point depart = trouverPoint('S');
         Point arrivee = trouverPoint('E');
 
@@ -69,14 +77,14 @@ public class Solveur {
         Stack<Point> pile = new Stack<>();
         pile.push(depart);
         visite[depart.x][depart.y] = true;
-
-        casesVisitees = 1;  // On démarre avec le départ visité
+        casesVisitees = 1;
 
         while (!pile.isEmpty()) {
             Point courant = pile.pop();
             chemin.add(courant);
 
             if (courant.equals(arrivee)) {
+                tempsExecution = System.currentTimeMillis() - debut;  // Fin du chrono
                 return true;
             }
 
@@ -88,13 +96,17 @@ public class Solveur {
                 }
             }
         }
+
+        tempsExecution = System.currentTimeMillis() - debut;  // Fin du chrono même si pas de solution
         return false;
     }
 
     // ============================
-    // BFS avec compteur
+    // BFS avec compteur + temps
     // ============================
     public boolean resoudreBFS() {
+        long debut = System.currentTimeMillis();  // On démarre le chrono
+
         Point depart = trouverPoint('S');
         Point arrivee = trouverPoint('E');
 
@@ -105,7 +117,7 @@ public class Solveur {
 
         visite = new boolean[labyrinthe.length][labyrinthe[0].length];
         chemin.clear();
-        casesVisitees = 1;  // On démarre avec le départ visité
+        casesVisitees = 1;
 
         Queue<Point> file = new LinkedList<>();
         Map<Point, Point> parents = new HashMap<>();
@@ -119,6 +131,7 @@ public class Solveur {
 
             if (courant.equals(arrivee)) {
                 reconstruireChemin(parents, arrivee);
+                tempsExecution = System.currentTimeMillis() - debut;  // Fin du chrono
                 return true;
             }
 
@@ -131,6 +144,8 @@ public class Solveur {
                 }
             }
         }
+
+        tempsExecution = System.currentTimeMillis() - debut;  // Fin du chrono même si pas de solution
         return false;
     }
 

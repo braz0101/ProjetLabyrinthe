@@ -1,11 +1,10 @@
 package mazeresolver;
 
 import mazeresolver.utils.LabyrintheGenerator;
-import mazeresolver.utils.Chrono;
 import mazeresolver.gui.LabyrinthePanel;
 
 import javax.swing.*;
-import java.awt.Point;
+import java.awt.*;
 import java.util.List;
 
 public class Main {
@@ -29,13 +28,10 @@ public class Main {
         char[][] grilleDFS = clonerGrille(grille);
         Solveur solveurDFS = new Solveur(grilleDFS);
 
-        Chrono chrono = new Chrono();
-        chrono.start();
         if (solveurDFS.resoudreDFS()) {
-            long tempsDFS = chrono.stop();
             System.out.println("\nChemin trouvé avec DFS !");
             marquerChemin(grilleDFS, solveurDFS.getChemin());
-            System.out.println("Temps d'exécution DFS : " + tempsDFS + " ms");
+            System.out.println("Temps d'exécution DFS : " + solveurDFS.getTempsExecution() + " ms");
             System.out.println("Nombre de cases visitées (DFS) : " + solveurDFS.getCasesVisitees());
         } else {
             System.out.println("\nAucun chemin trouvé avec DFS.");
@@ -43,8 +39,6 @@ public class Main {
 
         System.out.println("\nLabyrinthe avec chemin DFS :");
         new Labyrinthe(grilleDFS).afficher();
-
-        // Affichage graphique DFS
         afficherLabyrintheGraphique(grilleDFS, "Labyrinthe Résolu - DFS");
 
         // ============================
@@ -53,12 +47,10 @@ public class Main {
         char[][] grilleBFS = clonerGrille(grille);
         Solveur solveurBFS = new Solveur(grilleBFS);
 
-        chrono.start();
         if (solveurBFS.resoudreBFS()) {
-            long tempsBFS = chrono.stop();
             System.out.println("\nChemin trouvé avec BFS !");
             marquerChemin(grilleBFS, solveurBFS.getChemin());
-            System.out.println("Temps d'exécution BFS : " + tempsBFS + " ms");
+            System.out.println("Temps d'exécution BFS : " + solveurBFS.getTempsExecution() + " ms");
             System.out.println("Nombre de cases visitées (BFS) : " + solveurBFS.getCasesVisitees());
         } else {
             System.out.println("\nAucun chemin trouvé avec BFS.");
@@ -66,14 +58,17 @@ public class Main {
 
         System.out.println("\nLabyrinthe avec chemin BFS :");
         new Labyrinthe(grilleBFS).afficher();
-
-        // Affichage graphique BFS
         afficherLabyrintheGraphique(grilleBFS, "Labyrinthe Résolu - BFS");
+
+        // ============================
+        // Comparaison finale
+        // ============================
+        afficherComparaison(
+                solveurDFS.getTempsExecution(), solveurDFS.getCasesVisitees(),
+                solveurBFS.getTempsExecution(), solveurBFS.getCasesVisitees()
+        );
     }
 
-    /**
-     * Marque les cases du chemin trouvé par + dans la grille.
-     */
     private static void marquerChemin(char[][] grille, List<Point> chemin) {
         for (Point p : chemin) {
             if (grille[p.x][p.y] != 'S' && grille[p.x][p.y] != 'E') {
@@ -82,9 +77,6 @@ public class Main {
         }
     }
 
-    /**
-     * Clone une grille pour qu'on puisse faire DFS et BFS sur deux copies indépendantes.
-     */
     private static char[][] clonerGrille(char[][] source) {
         char[][] copie = new char[source.length][];
         for (int i = 0; i < source.length; i++) {
@@ -93,9 +85,6 @@ public class Main {
         return copie;
     }
 
-    /**
-     * Affiche une fenêtre graphique avec le labyrinthe coloré.
-     */
     private static void afficherLabyrintheGraphique(char[][] grille, String titre) {
         JFrame frame = new JFrame(titre);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -103,5 +92,14 @@ public class Main {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+    }
+
+    private static void afficherComparaison(long tempsDFS, int etapesDFS, long tempsBFS, int etapesBFS) {
+        System.out.println("\n==========================");
+        System.out.println(" Comparaison DFS vs BFS");
+        System.out.println("==========================");
+        System.out.printf("DFS  : %d étapes, %d ms\n", etapesDFS, tempsDFS);
+        System.out.printf("BFS  : %d étapes, %d ms\n", etapesBFS, tempsBFS);
+        System.out.println("==========================\n");
     }
 }
