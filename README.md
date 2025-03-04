@@ -12,6 +12,8 @@ Le projet est organisé comme suit :
 
 <img width="515" alt="ooo" src="https://github.com/user-attachments/assets/7b6bffe0-9a78-444c-a025-f2be7092a2c0" />
 
+<img width="305" alt="plan" src="https://github.com/user-attachments/assets/0c86209f-a947-41ed-8f95-c33f5404b3be" />
+
 ---
 ## 🛠️ Prérequis
 
