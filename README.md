@@ -6,30 +6,11 @@ Ce projet est une application Java permettant de générer et de résoudre des l
 - **BFS (Breadth First Search)** : Parcours en largeur
 
 ---
-
 ## 📂 Structure du projet
 
 Le projet est organisé comme suit :
 
-src/
-├── main/
-│   ├── java/
-│   │   ├── mazeresolver/                   # Ton package principal
-│   │   │   ├── gui/                        # Interface graphique
-│   │   │   │   ├── LabyrinthePanel.java
-│   │   │   ├── utils/                      # Classes utilitaires
-│   │   │   │   ├── Chrono.java
-│   │   │   │   ├── LabyrintheGenerator.java
-│   │   │   │   ├── LabyrintheLoader.java   # Un loader que tu n’avais pas mentionné avant, bien joué !
-│   │   │   ├── Labyrinthe.java              # Logique du labyrinthe
-│   │   │   ├── Main.java                     # Point d’entrée
-│   │   │   ├── Solveur.java                  # Algorithmes de résolution
-│   ├── resources/
-│   │   ├── labyrinthe.txt                    # Exemple de labyrinthe stocké
-├── test/
-│   ├── java/                                # Dossier pour tests unitaires (peut être vide)
-├── target/                                  # Dossier de compilation (généré)
-├── pom.xml                                  # Fichier Maven
+src/ ├── main/ │ ├── java/ │ │ ├── mazeresolver/ # Ton package principal │ │ │ ├── gui/ # Interface graphique │ │ │ │ ├── LabyrinthePanel.java │ │ │ ├── utils/ # Classes utilitaires │ │ │ │ ├── Chrono.java │ │ │ │ ├── LabyrintheGenerator.java │ │ │ │ ├── LabyrintheLoader.java # Un loader que tu n’avais pas mentionné avant, bien joué ! │ │ │ ├── Labyrinthe.java # Logique du labyrinthe │ │ │ ├── Main.java # Point d’entrée │ │ │ ├── Solveur.java # Algorithmes de résolution │ ├── resources/ │ │ ├── labyrinthe.txt # Exemple de labyrinthe stocké ├── test/ │ ├── java/ # Dossier pour tests unitaires (peut être vide) ├── target/ # Dossier de compilation (généré) ├── pom.xml # Fichier Maven
 
 
 ---
