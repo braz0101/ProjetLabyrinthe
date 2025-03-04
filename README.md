@@ -10,29 +10,9 @@ Ce projet est une application Java permettant de générer et de résoudre des l
 
 Le projet est organisé comme suit :
 
-src/
-├── main/
-│   ├── java/
-│   │   ├── mazeresolver/                   # Ton package principal
-│   │   │   ├── gui/                        # Interface graphique
-│   │   │   │   ├── LabyrinthePanel.java
-│   │   │   ├── utils/                      # Classes utilitaires
-│   │   │   │   ├── Chrono.java
-│   │   │   │   ├── LabyrintheGenerator.java
-│   │   │   │   ├── LabyrintheLoader.java   # Un loader 
-│   │   │   ├── Labyrinthe.java              # Logique du labyrinthe
-│   │   │   ├── Main.java                     # Point d’entrée
-│   │   │   ├── Solveur.java                  # Algorithmes de résolution
-│   ├── resources/
-│   │   ├── labyrinthe.txt                    # Exemple de labyrinthe stocké
-├── test/
-│   ├── java/                                # Dossier pour tests unitaires (peut être vide)
-├── target/                                  # Dossier de compilation (généré)
-├── pom.xml                                  # Fichier Maven
-
+<img width="515" alt="ooo" src="https://github.com/user-attachments/assets/7b6bffe0-9a78-444c-a025-f2be7092a2c0" />
 
 ---
-
 ## 🛠️ Prérequis
 
 - **Java 11 ou supérieur** recommandé (Testé avec OpenJDK 23)
