@@ -42,7 +42,11 @@ Le projet est organisé comme suit :
 
 ---
 
-## 🖼️ Aperçu
+## 🖼️ Aperçu après exécution
+
+<img width="928" alt="resultats images" src="https://github.com/user-attachments/assets/d4fadc80-8d71-4241-8474-33e9ec2ab635" />
+
+<img width="938" alt="resultats images 2" src="https://github.com/user-attachments/assets/b311867c-1ae5-4cbf-a786-cd854fd37a5b" />
 
 ### Labyrinthe généré
 
