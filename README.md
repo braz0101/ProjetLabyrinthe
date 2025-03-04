@@ -15,6 +15,7 @@ L'application offre une interface console interactive permettant de :
 ## 📂 Structure du projet
 
 Le projet est organisé comme suit :
+
 <img width="639" alt="ooo" src="https://github.com/user-attachments/assets/0ecf2b37-e768-494b-93d4-5e7a018a458a" />
 
 
