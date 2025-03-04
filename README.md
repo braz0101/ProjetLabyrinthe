@@ -10,19 +10,25 @@ Ce projet est une application Java permettant de générer et de résoudre des l
 
 Le projet est organisé comme suit :
 
-MazeSolverJava/
-├── src/
-│   ├── mazeresolver/                  # Package principal
-│   │   ├── Main.java                   # Point d'entrée
-│   │   ├── Labyrinthe.java             # Représentation du labyrinthe
-│   │   ├── Solveur.java                 # Algorithmes DFS & BFS
-│   │   ├── (tes autres classes)         # Si tu en avais d'autres (peut-être un fichier pour le chronométrage ?)
-│   ├── mazeresolver/utils/              # Package utilitaire
-│   │   ├── Chrono.java                  # Classe pour le chronomètre
-│   │   ├── LabyrintheGenerator.java     # Générateur aléatoire de labyrinthe
-│   ├── mazeresolver/gui/                 # Package interface graphique
-│       ├── LabyrinthePanel.java         # Panneau d'affichage graphique
-└── README.md (optionnel)                # Documentation
+src/
+├── main/
+│   ├── java/
+│   │   ├── mazeresolver/                   # Ton package principal
+│   │   │   ├── gui/                        # Interface graphique
+│   │   │   │   ├── LabyrinthePanel.java
+│   │   │   ├── utils/                      # Classes utilitaires
+│   │   │   │   ├── Chrono.java
+│   │   │   │   ├── LabyrintheGenerator.java
+│   │   │   │   ├── LabyrintheLoader.java   # Un loader 
+│   │   │   ├── Labyrinthe.java              # Logique du labyrinthe
+│   │   │   ├── Main.java                     # Point d’entrée
+│   │   │   ├── Solveur.java                  # Algorithmes de résolution
+│   ├── resources/
+│   │   ├── labyrinthe.txt                    # Exemple de labyrinthe stocké
+├── test/
+│   ├── java/                                # Dossier pour tests unitaires (peut être vide)
+├── target/                                  # Dossier de compilation (généré)
+├── pom.xml                                  # Fichier Maven
 
 
 ---
