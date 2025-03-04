@@ -56,7 +56,7 @@ Le projet est organisé comme suit :
 ### 2️⃣ Choix de la méthode de résolution
 - Résolution avec **DFS uniquement**
 - Résolution avec **BFS uniquement**
-- **Comparaison complète** entre DFS et BFS
+- **Utilisation de DFS et BFS puis Comparaison complète** entre les deux
 
 ### 3️⃣ Comparaison détaillée
 Après résolution, le programme affiche :
