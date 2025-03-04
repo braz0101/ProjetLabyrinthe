@@ -1,18 +1,41 @@
 # 🧪 Maze Resolver - Solveur de Labyrinthe
 
-Ce projet est une application Java permettant de générer et de résoudre des labyrinthes aléatoires à l'aide de deux algorithmes classiques :
+Ce projet est une application Java permettant de générer, charger et résoudre des labyrinthes. Deux algorithmes classiques sont implémentés pour la résolution :
 
-- **DFS (Depth First Search)** : Parcours en profondeur
-- **BFS (Breadth First Search)** : Parcours en largeur
+- DFS (Depth First Search - Parcours en profondeur)
+- BFS (Breadth First Search - Parcours en largeur)
+  
+L'application offre une interface console interactive permettant de :
+
+- Générer un labyrinthe aléatoire.
+- Charger un labyrinthe depuis un fichier.
+- Choisissez entre DFS, BFS ou une comparaison des deux algorithmes.
 
 ---
 ## 📂 Structure du projet
 
 Le projet est organisé comme suit :
 
-<img width="515" alt="ooo" src="https://github.com/user-attachments/assets/7b6bffe0-9a78-444c-a025-f2be7092a2c0" />
+src/
+├── main/
+│   ├── java/
+│   │   ├── mazeresolver/                 # Package principal
+│   │   │   ├── gui/                       # Interface graphique
+│   │   │   │   ├── LabyrinthePanel.java
+│   │   │   ├── utils/                     # Classes utilitaires
+│   │   │   │   ├── Chrono.java            # Chrono pour mesurer le temps d'exécution de chaque algorithme
+│   │   │   │   ├── LabyrintheGenerator.java #Générateur aléatoire de labyrinthe
+│   │   │   │   ├── LabyrintheLoader.java  # Un loader (charger le labyrinthe)
+│   │   │   ├── Labyrinthe.java            # Logique du labyrinthe
+│   │   │   ├── Main.java                   # Point d’entrée
+│   │   │   ├── Solveur.java                # Algorithmes de résolution
+│   ├── resources/
+│   │   ├── labyrinthe.txt                  # Exemple de labyrinthe stocké
+├── test/
+│   ├── java/                               # Dossier pour tests unitaires (peut être vide)
+├── target/                                # Dossier de compilation (généré)
+├── pom.xml                                # Fichier Maven
 
-<img width="305" alt="plan" src="https://github.com/user-attachments/assets/0c86209f-a947-41ed-8f95-c33f5404b3be" />
 
 ---
 ## 🛠️ Prérequis
@@ -44,48 +67,80 @@ Le projet est organisé comme suit :
 
 ## 🖼️ Aperçu après exécution
 
-<img width="928" alt="resultats images" src="https://github.com/user-attachments/assets/d4fadc80-8d71-4241-8474-33e9ec2ab635" />
+1. Exemple en utilisant le fichier labyrinthe.txt :
+<img width="597" alt="1" src="https://github.com/user-attachments/assets/8ebd110a-b0ab-4af9-8961-391dead8a03b" />
 
-<img width="938" alt="resultats images 2" src="https://github.com/user-attachments/assets/b311867c-1ae5-4cbf-a786-cd854fd37a5b" />
+<img width="709" alt="2" src="https://github.com/user-attachments/assets/bc323342-7a63-49ab-a3f2-40c3d701453b" />
 
-### Labyrinthe généré
-
-S==#=====#==#=#=#=== #===#==#=##===#===== ======#=#==##====#== ==#=====#=======#==# ==============#==##= =====#============#= ====#======#=======# =====#===========#== ========#=====#===== ==========#===#===#= ==#========#====#==# =#==========#======#
-======#============= ==#=##====##=##===== =#===#========#===#= ========#=#=##====== ===##==#===#=====#== #==##========#====## =====#=#===========E
+<img width="629" alt="3" src="https://github.com/user-attachments/assets/03e36c63-afda-40a0-ac78-653a23b9744d" />
 
 
+2. Exemple en générant d'un fichier aléatoire :
+<img width="640" alt="5" src="https://github.com/user-attachments/assets/3cb111d7-10ef-460d-b2c7-c0819a0a88e2" />
+
+<img width="395" alt="6" src="https://github.com/user-attachments/assets/b78dfe27-f619-43eb-bfd7-9fd826afb123" />
+
+<img width="824" alt="7" src="https://github.com/user-attachments/assets/56efb1d2-0901-4e57-bf67-ccb94b34b6d8" />
+
+### Labyrinthe généré aléatoirement
+
+S====#====
+#========#
+=#========
+==========
+#=======#=
+#==#=#====
+======#===
+==#=#=====
+=#===####=
+#==#==#==E
 ---
 
 ## 🔍 Résultats des Algorithmes
 
-### Chemin trouvé avec DFS
-- **Temps d'exécution DFS** : 2 ms
-- **Nombre de cases visitées (DFS)** : 186
+🔍 Résolution avec DFS...
 
-#### Labyrinthe avec chemin DFS
+✅ Chemin trouvé avec DFS !
+Temps d'exécution DFS : 1 ms
+Nombre de cases visitées (DFS) : 63
 
-S++#=====#==#=#=#=== #=++#==#=##===#===== ===+++#=#==##====#== ==#==+++#=======#==# =======+++++++#==##= =====#=======+++++#= ====#======#=====++# =====#===========#++ ========#+++==#+++++ ++++++++++#++=#+==#+ +=#========#++++#==# +#==========#======# ++++++++++++++++++++ ======#============+ ==#=##====##=##+++++ =#===#========#+==#= ========#=#=##=+++++ ===##==#===#====+#++ #==##========#==++## =====#=#=========++E
+Labyrinthe avec chemin DFS :
+S++++#====
+#===+++++#
+=#======++
+=========+
+#++++++=#+
+#+=#=#++++
+=+++++#===
+==#=#+++++
+=#===####+
+#==#==#==E
 
+🔍 Résolution avec BFS...
 
----
+✅ Chemin trouvé avec BFS !
+Temps d'exécution BFS : 0 ms
+Nombre de cases visitées (BFS) : 78
 
-### Chemin trouvé avec BFS
-- **Temps d'exécution BFS** : 1 ms
-- **Nombre de cases visitées (BFS)** : 327
+Labyrinthe avec chemin BFS :
+S+===#====
+#++======#
+=#+=======
+==+=======
+#=+=====#=
+#=+#=#====
+==++++#===
+==#=#+++++
+=#===####+
+#==#==#==E
 
-#### Labyrinthe avec chemin BFS
-
-S+=#=====#==#=#=#=== #+==#==#=##===#===== =+====#=#==##====#== =+#=====#=======#==# =+============#==##= =+===#============#= =+==#======#=======# =+===#===========#== =+======#=====#===== =+++======#===#===#= ==#+=======#====#==# =#=+========#======# ===+================ ===+==#============= ==#+##====##=##===== =#=+=#========#===#= ===+++==#=#=##====== ===##+=#===#=====#== #==##++++====#====## =====#=#+++++++++++E
-
-
----
 
 ## 📊 Comparatif DFS vs BFS
 
 | Critère                | DFS        | BFS        |
 |----------------|-----------|-----------|
-| **Temps**             | 2 ms       | 1 ms       |
-| **Cases visitées** | 186         | 327         |
+| **Temps**             | 1 ms       | 0 ms       |
+| **Cases visitées** | 63         | 78         |
 
 ---
 
